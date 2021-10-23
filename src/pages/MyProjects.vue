@@ -1,11 +1,12 @@
 <template>
-    <projects-banner :isBtVisible="isBtVisible" :isPhVisible="isPhVisible" :isIhVisible="isIhVisible" :isJoiiVisible="isJoiiVisible"></projects-banner>
-    <the-projects @btVisible="btVisible" @phVisible="phVisible" @ihVisible="ihVisible" @joiiVisible="joiiVisible"></the-projects>
+    <projects-banner :isBtVisible="isBtVisible" :isPhVisible="isPhVisible" :isIhVisible="isIhVisible" :isJoiiVisible="isJoiiVisible" :isTodoVisible="isTodoVisible"></projects-banner>
+    <the-projects @btVisible="btVisible" @phVisible="phVisible" @ihVisible="ihVisible" @joiiVisible="joiiVisible" @todoVisible="todoVisible"></the-projects>
 </template>
 
 <script>
 import ProjectsBanner from '../components/ProjectsBanner.vue';
 import TheProjects from '../components/TheProjects.vue';
+import { mapMutations } from 'vuex';
 
 export default {
     components: {
@@ -17,7 +18,8 @@ export default {
             isBtVisible: false,
             isPhVisible: false,
             isIhVisible: false,
-            isJoiiVisible: false
+            isJoiiVisible: false,
+            isTodoVisible: false
         }
     },
     methods: {
@@ -32,7 +34,14 @@ export default {
         },
         joiiVisible(value) {
             this.isJoiiVisible = value;
-        }
-    }
+        },
+        todoVisible(value) {
+            this.isTodoVisible = value;
+        },
+        ...mapMutations(['updateMenuActive'])
+      },
+      mounted() {
+        this.updateMenuActive(false);
+      }
 }
 </script>

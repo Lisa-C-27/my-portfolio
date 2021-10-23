@@ -17,16 +17,19 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
-  data() {
-    return {
-      menuIsActive: false
+  computed: {
+    menuIsActive() {
+      return this.$store.getters.menuActive;
     }
   },
   methods: {
     toggleMenu() {
-      return this.menuIsActive = !this.menuIsActive;
-    }
+      this.updateMenuActive(!this.menuIsActive);
+    },
+    ...mapMutations(['updateMenuActive'])
   }
 }
 </script>

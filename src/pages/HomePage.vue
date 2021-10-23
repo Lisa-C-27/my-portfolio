@@ -8,6 +8,7 @@
  import HeroBanner from '../components/HeroBanner.vue';
  import MySkills from '../components/MySkills.vue';
  import AboutMe from '../components/AboutMe.vue';
+ import { mapMutations } from 'vuex';
 
 export default {
  components: {
@@ -15,5 +16,11 @@ export default {
    MySkills,
    AboutMe
  },
+ methods: {
+   ...mapMutations(['updateMenuActive'])
+ },
+ mounted() {
+   this.updateMenuActive(false);
+ }
 }
 </script>

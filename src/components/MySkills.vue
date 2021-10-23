@@ -15,16 +15,6 @@
             <img :src="skill.src">
             <h4>{{ skill.title }}</h4>
           </div>
-          <!-- <div class="column-50">
-            <div v-for="skill in coreSkills" :key="skill.title" class="tab" @click="showTab(skill.title)" :class="{ 'active' : skill.title == tabData }">
-              <h4>{{ skill.title }}</h4>
-              <p>{{ skill.text }}</p>
-            </div>
-          </div>
-          <div class="column-50 tab-contents">
-               <img :src="tabContents"> -->
-              <!-- {{ tabContents }} -->
-          <!-- </div> --> 
         </div>
       </div>
       <div class="related-skills">
@@ -56,8 +46,6 @@ import apiIcon from '../assets/icons8-rest-api-50.png';
 export default {
   data() {
     return {
-      tabData: 'Wordpress',
-      // Add tab contents here
       coreSkills: [
         {
           src: WordPressIcon,
@@ -65,11 +53,11 @@ export default {
         },
         {
           src: cssIcon,
-          title: 'CSS'
+          title: 'CSS3'
         },
         {
           src: htmlIcon,
-          title: 'HTML'
+          title: 'HTML5'
         },
         {
           src: JavaScriptIcon,
@@ -77,33 +65,15 @@ export default {
         },
         {
           src: phpIcon,
-          title: 'PHP'
+          title: 'PHP7'
         },
         {
           src: apiIcon,
           title: 'API Integrations'
         },
       ],
-      // coreSkills: [
-      //   {
-      //     title: 'Wordpress',
-      //     text: 'A typical WordPress installation for me includes the Genesis Framework, Elementor and ACF, which helps me to quickly make custom themes for my clients. Elementor is very user-friendly which makes it easy for the client to update their content as required.'
-      //   },
-      //   {
-      //     title: 'HTML & CSS',
-      //     text: 'While I am confident across the full stack, I have a growing interest and talent for frontend design.'
-      //   },
-      //   {
-      //     title: 'JavaScript & jQuery',
-      //     text: 'Whilst I may not be 100% fluent in JavaScript and jQuery, I know enough to be able to research and find a solution to any problem I face.'
-      //   },
-      //   {
-      //     title: 'APIs & Integrations',
-      //     text: 'During my career I have integrated a few APIs into a WordPress website such as Google Maps, Google Sheets, mapBox and Halper (iBuildNew home and land feed).'
-      //   }
-      // ],
       relatedSkills: [
-        'Vue.js',
+        'Vue3.js',
         'Nuxt.js',
         'Advanced Custom Fields',
         'Genesis Framework',
@@ -127,23 +97,6 @@ export default {
       ] 
     }
   },
-  methods: {
-    showTab(tab) {
-      console.log(tab);
-      this.tabData = tab;
-      // show tab data
-    }
-  },
-  computed: {
-    tabContents() {
-      // const tab =  this.tabData;
-      // if(tab == 'Wordpress') {
-      //   return wordpressImage;
-      // } else {
-        return this.tabData;
-      // }
-    }
-  }
 }
 </script>
 

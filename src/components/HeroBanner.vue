@@ -4,7 +4,7 @@
       <div class="column-60">
         <div class="hero-text">
           <h1><span class="sub-heading">oh hey</span>I'm Lisa <span class="below-heading">a front-end web developer</span></h1>
-          <p>WordPress | HTML | CSS | PHP | JavaScript | jQuery | Vue.js | AJAX | MySQL</p>
+          <p>WordPress | HTML5 | CSS3 | PHP7 | JavaScript | jQuery | Vue3.js | AJAX </p>
           <div class="flex banner-ctas">
             <base-button url="/#skills" mode="ghost">Explore my skills <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="16px" viewBox="0 0 24 24" width="16px"><rect fill="none" height="24" width="24"/><path d="M19,15l-1.41-1.41L13,18.17V2H11v16.17l-4.59-4.59L5,15l7,7L19,15z"/></svg></base-button>
             <base-button url="/projects">View my portfolio <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="16px" viewBox="0 0 24 24" width="16px"><rect fill="none" height="24" width="24"/><path d="M15,5l-1.41,1.41L18.17,11H2V13h16.17l-4.59,4.59L15,19l7-7L15,5z"/></svg></base-button>
@@ -67,10 +67,6 @@
   .hero-text p {
     margin: 0 0 40px;
   }
-  /* .hero-text svg {
-    fill: inherit;
-    margin-left: 5px;
-  } */
   .project-logo-container {
     background-color: #fff;
     width: 187px;

@@ -8,7 +8,9 @@ const store = createStore({
       btVisible: Boolean,
       phVisible: Boolean,
       ihVisible: Boolean,
-      joiiVisible: Boolean
+      joiiVisible: Boolean,
+      todoVisible: Boolean,
+      menuActive: false
     };
   },
   getters: {
@@ -29,6 +31,12 @@ const store = createStore({
     },
     joiiVisible(state) {
       return state.joiiVisible;
+    },
+    todoVisible(state) {
+      return state.todoVisible;
+    },
+    menuActive(state) {
+      return state.menuActive;
     }
   },
   mutations: {
@@ -50,12 +58,16 @@ const store = createStore({
     isJoiiVisible(state, payload) {
       state.joiiVisible = payload;
     },
+    isTodoVisible(state, payload) {
+      state.todoVisible = payload;
+    },
     runUpdate(state) {
       const btVisible = state.btVisible;
       const overviewVisible = state.overviewVisible;
       const phVisible = state.phVisible;
       const ihVisible = state.ihVisible;
       const joiiVisible = state.joiiVisible;
+      const todoVisible = state.todoVisible;
 
       if((overviewVisible === true && btVisible === true) || overviewVisible === true ) {
         state.navActive = 'overview';
@@ -69,9 +81,14 @@ const store = createStore({
       else if((ihVisible === true && joiiVisible === true) || ihVisible === true) {
         state.navActive = 'impact-homes';
       }
-      else if(joiiVisible === true) {
+      else if((joiiVisible === true && todoVisible === true) || joiiVisible === true) {
         state.navActive = 'joii';
+      } else if (todoVisible === true) {
+        state.navActive = 'todo-app';
       }
+    },
+    updateMenuActive(state, payload) {
+      return state.menuActive = payload;
     }
   },
   actions: {
@@ -96,6 +113,10 @@ const store = createStore({
     },
     updateJoiiVisible(context, payload) {
       context.commit('isJoiiVisible', payload);
+      context.commit('runUpdate');
+    },
+    updateTodoVisible(context, payload) {
+      context.commit('isTodoVisible', payload);
       context.commit('runUpdate');
     },
   }

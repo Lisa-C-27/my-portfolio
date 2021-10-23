@@ -8,7 +8,6 @@
         </div>
       </div>
       <div class="column-40">
-        <!-- <img src="../assets/coder1.png"> -->
       </div>
     </div>
     <div class="nav-bar">
@@ -21,6 +20,7 @@
             <li><router-link class="underline-effect" :class="{active: whichNavVisibile == 'privium-homes'}" to="/projects#privium-homes">privium homes</router-link></li>
             <li><router-link class="underline-effect" :class="{active: whichNavVisibile == 'impact-homes'}" to="/projects#impact-homes">impact homes</router-link></li>
             <li><router-link class="underline-effect" :class="{active: whichNavVisibile == 'joii'}" to="/projects#joii">joii</router-link></li>
+            <li><router-link class="underline-effect" :class="{active: whichNavVisibile == 'todo-app'}" to="/projects#todo-app">todo app</router-link></li>
           </ul>
         </div>
       </div>
@@ -31,11 +31,10 @@
 <script>
 import { mapGetters } from 'vuex';
 export default {
-  props: ['isBtVisible', 'isPhVisible', 'isIhVisible', 'isJoiiVisible'],
+  props: ['isBtVisible', 'isPhVisible', 'isIhVisible', 'isJoiiVisible', 'isTodoVisible'],
   data() {
     return {
       overviewVisible: true,
-      // whichNavVisibile: this.$store.state.navActive
     };
   },
   computed: {
@@ -132,9 +131,20 @@ li {
 .underline-effect::after {
     margin-top: 5px;
 }
+@media only screen and (max-width: 1024px) {
+  section {
+    padding-bottom: 0;
+  }
+  .nav-bar {
+    margin-top: 80px;
+  }
+  #overview {
+    padding: 80px 20px;
+  }
+}
 @media only screen and (max-width: 800px) {
   #overview {
-    padding-top: 0;
+    padding: 40px 20px;
   }
   .nav-bar ul {
     overflow-x: auto;
@@ -148,10 +158,16 @@ li {
   .column-40 {
     display: none;
   }
+  .hero-text p {
+    margin: 20px 0;
+  }
 }
 @media only screen and (max-width: 699px) {
   .to-stick.sticky {
     top: 60px;
+  }
+  .nav-bar .container {
+    padding: 15px 2px 15px 15px;
   }
 }
 </style>

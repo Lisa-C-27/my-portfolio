@@ -7,20 +7,8 @@
 <script>
 import TheHeader from './layout/TheHeader.vue';
 import TheFooter from './layout/TheFooter.vue';
-// import { useScreen } from 'vue-screen';
-// import { watch } from 'vue';
 
 export default {
-  // setup() {
-  //   const screen = useScreen();
-  //   watch(screen, (currentValue, oldValue) => {
-  //     console.log(currentValue);
-  //     console.log(oldValue);
-  //   })
-  //   return {
-  //     screen
-  //   }
-  // },
   name: 'App',
   components: {
     TheHeader,
@@ -50,7 +38,6 @@ export default {
 <style>
 html {
   font-size: 18px;
-  /* scroll-behavior: smooth; */
 }
 :root {
   --primary-colour: #12969E;
